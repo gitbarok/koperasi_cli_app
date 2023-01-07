@@ -4,12 +4,12 @@ from time import sleep
 from utils.user import User
 from utils.validation import Validation
 
-UNDERSCORE = '-'*41
+UNDERSCORE = "-"*41
 DATE_NOW = datetime.datetime.now()
 
 class UserInterface():
     def interface():
-        os.system('clear')
+        os.system("clear")
         hashtag = "#" * 35
         print("[" + hashtag + "]")
         print("         Koperasi Maju Bersama                   ")
@@ -24,13 +24,13 @@ class UserInterface():
             print("[1]. Login | [2]. Register | [3]. Keluar")
             print(UNDERSCORE)
             option = input("Pilih menu anda: ")
-            if option == '1':
+            if option == "1":
                 UserInterface.login_account()
                 break
-            elif option == '2':
+            elif option == "2":
                 UserInterface.register_account()
                 break
-            elif option == '3':
+            elif option == "3":
                 os.system("clear")
                 print("     Anda Berhasil Keluar")
                 sleep(2)
@@ -65,14 +65,14 @@ class UserInterface():
             print("[1]. Minjam Uang | [2]. Info Akun  | [3]. Kembali Ke Menu")
             print(UNDERSCORE)
             option = input("Pilih menu anda: ")
-            if option == '1':
+            if option == "1":
                 UserInterface.minjam_uang()
                 break
-            elif option == '2':
+            elif option == "2":
                 UserInterface.info_akun()
                 break
                 # UserInterface.menu_login()
-            elif option == '3':
+            elif option == "3":
                 UserInterface.menu()
                 break
             print("Menu tidak ada, silahkan pilih dengan benar")
@@ -103,14 +103,14 @@ class UserInterface():
             UserInterface.interface()
             info = User()
             hasil = info.account_info(no_anggota)
-            print("Nama anda adalah: ",hasil[0])
+            print("Nama anda adalah: ",hasil["nama"])
             print(UNDERSCORE)
-            print("Unik id anda adalah: ",hasil[1])
+            print("Unik id anda adalah: ",hasil["unique"])
             print(UNDERSCORE)
-            print("Balance anda adalah: ",hasil[2])
+            print("Balance anda adalah: ",hasil["balance"])
             print(UNDERSCORE)
             menu_option = input("Tekan Y/y untuk kembali ke menu? ")
-            if menu_option.lower() == 'y':
+            if menu_option.lower() == "y":
                 print("Dalam 3 detik anda akan kembali ke menu")
                 sleep(2)
                 UserInterface.menu_login()
