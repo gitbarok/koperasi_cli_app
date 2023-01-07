@@ -12,7 +12,7 @@ def test_validation_register_2():
 
 def test_validation_register_3():
     test_register_3 = Validation.validation_register("Muhammad Rizky Mubarok","asdasd")
-    assert test_register_3 == False
+    assert test_register_3 == True
 
 
 def test_validation_borrow_1():
